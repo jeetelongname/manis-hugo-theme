@@ -13,10 +13,11 @@
 		{{ $dateformat := .Site.Params.DateFmt | default "Jan 02, 2006" }}
 		<time datetime="{{.Date}}">{{ .Date.Format $dateformat }}</time>
 		<span class="no-print">
+			{{ $prefix := .Site.Params.prefix }}
 			{{ with .Params.tags -}}
 			-
 				{{ range . }}
-				<a href="/tags/{{.}}">{{.}}</a>
+				<a href="{{ $prefix }}/tags/{{.}}">{{.}}</a>
 				{{ end }}
 			{{- end -}}
 			{{- with .Params.workURL -}}

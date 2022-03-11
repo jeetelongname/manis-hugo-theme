@@ -3,9 +3,10 @@
 	{{ partial "title" . }}
 	{{ with .Content }}{{.}}{{ end }}
 	<ul style="list-style: none;">
+		{{ $prefix := .Site.Params.prefix }}
 		{{ range .Data.Terms.Alphabetical }}
 		<li style="display: inline;">
-			<a href="/{{$.Data.Plural}}/{{.Term}}" style="">{{ .Term }}</a>
+			<a href="{{ $prefix }}/{{$.Data.Plural}}/{{.Term}}" style="">{{ .Term }}</a>
 			<span>({{ .Count }})</span>
 		</li>
 		{{ end }}

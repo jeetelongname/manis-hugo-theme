@@ -1,14 +1,15 @@
+{{ $prefix := .Site.Params.prefix }}
 {{ if gt .Paginator.TotalPages 1 }}
 <nav class="pagination">
     {{ with .Paginator.Prev }}
     <a href="{{ .URL }}">
-    <img class="icon-text" src="/img/prev.svg"/>
+    <img class="icon-text" src="{{ $prefix }}/img/prev.svg"/>
     </a>
     {{ end }}
     <span>{{.Paginator.PageNumber}}</span>
     {{ with .Paginator.Next }}
     <a href="{{ .URL }}">
-    <img class="icon-text" src="/img/next.svg"/>
+    <img class="icon-text" src="{{ $prefix }}/img/next.svg"/>
     </a>
     {{ end }}
 </nav>

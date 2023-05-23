@@ -24,4 +24,5 @@
 {{ if in .Site.Params.DisqusSections .Section }}
 	{{ partial "disqus" . }}
 {{ end }}
+{{ partial "webring" . }}
 {{ partial "footer" . }}
